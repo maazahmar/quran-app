@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quran App — UI Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700&family=Lateef:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="phone-frame">
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span>9:41</span>
+    <div class="notch"></div>
+    <div class="status-icons">
+      <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+    </div>
+  </div>
+
+  <!-- ==================== HOME SCREEN ==================== -->
+  <div id="screen-home" class="screen active">
+    <div class="home-header">
+      <div class="greeting">Assalamu Alaikum</div>
+      <div class="home-title">احسن البیان</div>
+    </div>
+
+    <!-- Last Read -->
+    <div class="last-read-card">
+      <div class="decorative"></div>
+      <div class="last-read-label">Last Read</div>
+      <div class="last-read-surah">Al-Baqarah</div>
+      <div class="last-read-ayah">Ayah 255 · Ayatul Kursi</div>
+      <button class="continue-btn">
+        Continue ›
+      </button>
+    </div>
+
+    <!-- Sticky Search & Tabs Container -->
+    <div class="sticky-controls">
+      <!-- Search -->
+      <div class="search-bar">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="Search surah...">
+      </div>
+
+      <!-- Tabs Header -->
+      <div class="home-tabs">
+        <button class="home-tab active" data-filter="surah">Surah</button>
+        <button class="home-tab" data-filter="juz">Juz</button>
+      </div>
+    </div>
+
+    <div class="surah-list">
+
+      <div class="surah-item" data-surah="Al-Fatihah" data-meaning="the opening" data-info="Meccan · 7 Verses">
+        <div class="surah-number">1</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-Fatihah</div>
+          <div class="surah-meaning">The Opening</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الفاتحة</div>
+          <div class="surah-verses">7 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-Baqarah" data-meaning="the cow" data-info="Medinan · 286 Verses">
+        <div class="surah-number">2</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-Baqarah</div>
+          <div class="surah-meaning">The Cow</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">البقرة</div>
+          <div class="surah-verses">286 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Aal-E-Imran" data-meaning="the family of imran" data-info="Medinan · 200 Verses">
+        <div class="surah-number">3</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Aal-E-Imran</div>
+          <div class="surah-meaning">The Family of Imran</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">آل عمران</div>
+          <div class="surah-verses">200 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="An-Nisa" data-meaning="the women" data-info="Medinan · 176 Verses">
+        <div class="surah-number">4</div>
+        <div class="surah-info">
+          <div class="surah-name-en">An-Nisa</div>
+          <div class="surah-meaning">The Women</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">النساء</div>
+          <div class="surah-verses">176 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-Ma'idah" data-meaning="the table spread" data-info="Medinan · 120 Verses">
+        <div class="surah-number">5</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-Ma'idah</div>
+          <div class="surah-meaning">The Table Spread</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">المائدة</div>
+          <div class="surah-verses">120 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-An'am" data-meaning="the cattle" data-info="Meccan · 165 Verses">
+        <div class="surah-number">6</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-An'am</div>
+          <div class="surah-meaning">The Cattle</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الأنعام</div>
+          <div class="surah-verses">165 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-A'raf" data-meaning="the heights" data-info="Meccan · 206 Verses">
+        <div class="surah-number">7</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-A'raf</div>
+          <div class="surah-meaning">The Heights</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الأعراف</div>
+          <div class="surah-verses">206 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-Anfal" data-meaning="the spoils of war" data-info="Medinan · 75 Verses">
+        <div class="surah-number">8</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-Anfal</div>
+          <div class="surah-meaning">The Spoils of War</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الأنفال</div>
+          <div class="surah-verses">75 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="At-Tawbah" data-meaning="the repentance" data-info="Medinan · 129 Verses">
+        <div class="surah-number">9</div>
+        <div class="surah-info">
+          <div class="surah-name-en">At-Tawbah</div>
+          <div class="surah-meaning">The Repentance</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">التوبة</div>
+          <div class="surah-verses">129 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Yunus" data-meaning="jonah" data-info="Meccan · 109 Verses">
+        <div class="surah-number">10</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Yunus</div>
+          <div class="surah-meaning">Jonah</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">يونس</div>
+          <div class="surah-verses">109 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-Kahf" data-meaning="the cave" data-info="Meccan · 110 Verses">
+        <div class="surah-number">18</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-Kahf</div>
+          <div class="surah-meaning">The Cave</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الكهف</div>
+          <div class="surah-verses">110 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Ya-Sin" data-meaning="yaseen" data-info="Meccan · 83 Verses">
+        <div class="surah-number">36</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Ya-Sin</div>
+          <div class="surah-meaning">Yaseen</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">يس</div>
+          <div class="surah-verses">83 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Ar-Rahman" data-meaning="the beneficent" data-info="Medinan · 78 Verses">
+        <div class="surah-number">55</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Ar-Rahman</div>
+          <div class="surah-meaning">The Beneficent</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الرحمن</div>
+          <div class="surah-verses">78 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="Al-Mulk" data-meaning="the sovereignty" data-info="Meccan · 30 Verses">
+        <div class="surah-number">67</div>
+        <div class="surah-info">
+          <div class="surah-name-en">Al-Mulk</div>
+          <div class="surah-meaning">The Sovereignty</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الملك</div>
+          <div class="surah-verses">30 verses</div>
+        </div>
+      </div>
+
+      <div class="surah-item" data-surah="An-Nas" data-meaning="mankind" data-info="Meccan · 6 Verses">
+        <div class="surah-number">114</div>
+        <div class="surah-info">
+          <div class="surah-name-en">An-Nas</div>
+          <div class="surah-meaning">Mankind</div>
+        </div>
+        <div class="surah-meta">
+          <div class="surah-name-ar">الناس</div>
+          <div class="surah-verses">6 verses</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== READER SCREEN ==================== -->
+  <div id="screen-reader" class="screen">
+    <!-- Reader Header -->
+    <div class="reader-header">
+      <button class="reader-back" id="reader-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="reader-title-group">
+        <div class="reader-surah-name" id="reader-surah-name">Al-Fatihah</div>
+        <div class="reader-surah-info" id="reader-surah-info">Meccan · 7 Verses</div>
+      </div>
+      <div class="reader-actions">
+        <button class="reader-action-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+
+
+    <!-- Toggle Tabs -->
+    <div class="toggle-tabs">
+      <button class="toggle-tab active" data-mode="translation">Translation</button>
+      <button class="toggle-tab" data-mode="translit">Translit</button>
+      <button class="toggle-tab" data-mode="tafsir">Tafsir</button>
+    </div>
+
+    <!-- Ayah 1 -->
+    <div class="ayah-card">
+      <div class="ayah-top">
+        <div class="ayah-num">1</div>
+        <div class="ayah-actions">
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          </button>
+          <button class="ayah-action-btn bookmark-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="ayah-arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ﴿١﴾</div>
+      <div class="ayah-translit" style="display:none">Bismillāhir-Raḥmānir-Raḥīm</div>
+      <div class="ayah-translation">परम कृपालु, अत्यन्त दयालु अल्लाह के नाम से।</div>
+      <div class="ayah-tafsir" style="display:none">यह आयत हर कार्य की शुरुआत अल्लाह के नाम से करने की शिक्षा देती है। 'बिस्मिल्लाह' कहने से हर काम में बरकत आती है।</div>
+    </div>
+
+    <!-- Ayah 2 -->
+    <div class="ayah-card">
+      <div class="ayah-top">
+        <div class="ayah-num">2</div>
+        <div class="ayah-actions">
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          </button>
+          <button class="ayah-action-btn bookmark-btn bookmarked">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="ayah-arabic">ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ ﴿٢﴾</div>
+      <div class="ayah-translit" style="display:none">Al-ḥamdu lillāhi Rabbil-ʿālamīn</div>
+      <div class="ayah-translation">सब प्रशंसा अल्लाह के लिए है जो सारे संसारों का पालनहार है।</div>
+      <div class="ayah-tafsir" style="display:none">अल्लाह की हम्द (प्रशंसा) से सूरह की शुरुआत होती है। 'रब्बुल आलमीन' का अर्थ है सारे जहानों का पालनकर्ता।</div>
+    </div>
+
+    <!-- Ayah 3 -->
+    <div class="ayah-card">
+      <div class="ayah-top">
+        <div class="ayah-num">3</div>
+        <div class="ayah-actions">
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          </button>
+          <button class="ayah-action-btn bookmark-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="ayah-arabic">ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ﴿٣﴾</div>
+      <div class="ayah-translit" style="display:none">Ar-Raḥmānir-Raḥīm</div>
+      <div class="ayah-translation">जो बड़ा कृपालु और अत्यन्त दयावान है।</div>
+      <div class="ayah-tafsir" style="display:none">'अर-रहमान' अल्लाह की व्यापक रहमत का नाम है जो सब पर है, और 'अर-रहीम' विशेष रहमत है जो ईमान वालों के लिए है।</div>
+    </div>
+
+    <!-- Ayah 4 -->
+    <div class="ayah-card">
+      <div class="ayah-top">
+        <div class="ayah-num">4</div>
+        <div class="ayah-actions">
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          </button>
+          <button class="ayah-action-btn bookmark-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="ayah-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="ayah-arabic">مَـٰلِكِ يَوْمِ ٱلدِّينِ ﴿٤﴾</div>
+      <div class="ayah-translit" style="display:none">Māliki Yawmid-Dīn</div>
+      <div class="ayah-translation">प्रतिफल के दिन का मालिक है।</div>
+      <div class="ayah-tafsir" style="display:none">क़यामत के दिन का एकमात्र मालिक अल्लाह है। उस दिन किसी का कोई अधिकार नहीं होगा सिवाय अल्लाह के।</div>
+    </div>
+
+  </div>
+
+  <!-- ==================== BOOKMARKS SCREEN ==================== -->
+  <div id="screen-bookmarks" class="screen">
+    <div class="bookmark-header">
+      <div class="bookmark-screen-title">Bookmarks</div>
+    </div>
+    <div class="bookmark-list">
+      <!-- Empty State -->
+      <div class="bookmark-empty" style="display:none">
+        <div class="empty-icon">🔖</div>
+        <div class="empty-title">No Bookmarks Yet</div>
+        <div class="empty-desc">Verses you bookmark will appear here for quick access.</div>
+        <button class="empty-btn">Start Reading</button>
+      </div>
+
+      <div class="bookmark-item">
+        <div class="bookmark-item-top">
+          <div class="bookmark-item-surah">Al-Baqarah — Ayah 255</div>
+          <button class="bookmark-delete-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="bookmark-item-arabic">ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ</div>
+        <div class="bookmark-item-translation">अल्लाह, उसके सिवा कोई पूज्य नहीं, वह जीवन्त है, सबका संभालने वाला है।</div>
+      </div>
+
+      <div class="bookmark-item">
+        <div class="bookmark-item-top">
+          <div class="bookmark-item-surah">Al-Fatihah — Ayah 2</div>
+          <button class="bookmark-delete-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="bookmark-item-arabic">ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ</div>
+        <div class="bookmark-item-translation">सब प्रशंसा अल्लाह के लिए है जो सारे संसारों का पालनहार है।</div>
+      </div>
+
+      <div class="bookmark-item">
+        <div class="bookmark-item-top">
+          <div class="bookmark-item-surah">Ya-Sin — Ayah 1</div>
+          <button class="bookmark-delete-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="bookmark-item-arabic">يسٓ</div>
+        <div class="bookmark-item-translation">या-सीन।</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SETTINGS SCREEN ==================== -->
+  <div id="screen-settings" class="screen">
+    <div class="settings-header">
+      <div class="settings-title">Settings</div>
+    </div>
+
+    <div class="settings-group-title">Appearance</div>
+    <div class="settings-group">
+      <div class="setting-item">
+        <div>
+          <div class="setting-label">Dark Mode</div>
+          <div class="setting-desc">Switch to dark theme</div>
+        </div>
+        <button class="toggle-switch" id="theme-toggle"></button>
+      </div>
+      <div class="setting-item">
+        <div>
+          <div class="setting-label">Arabic Font Size</div>
+          <div class="setting-desc" id="font-size-value">28px</div>
+        </div>
+        <div class="slider-container-row">
+          <input type="range" id="arabic-font-slider" min="20" max="48" value="28" class="premium-slider">
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-group-title">Reading</div>
+    <div class="settings-group">
+      <div class="setting-item">
+        <div>
+          <div class="setting-label">Translation</div>
+        </div>
+        <select class="setting-select">
+          <option selected>Hindi</option>
+          <option>Nepali</option>
+          <option>English</option>
+        </select>
+      </div>
+      <div class="setting-item">
+        <div>
+          <div class="setting-label">Tafsir</div>
+        </div>
+        <select class="setting-select">
+          <option selected>Hindi — Maulana Wahiduddin Khan</option>
+          <option>Nepali — Sahih Intl.</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="settings-group-title">Audio</div>
+    <div class="settings-group">
+      <div class="setting-item">
+        <div>
+          <div class="setting-label">Reciter</div>
+        </div>
+        <select class="setting-select">
+          <option selected>Mishary Rashid</option>
+          <option>Abdul Basit</option>
+          <option>Sudais</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-overlay" id="delete-modal">
+    <div class="modal-content">
+      <div class="modal-title">Remove this bookmark?</div>
+      <div class="modal-actions">
+        <!-- No (Cross) -->
+        <button class="modal-btn cancel" id="cancel-delete" title="No">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <!-- Yes (Tick) -->
+        <button class="modal-btn confirm" id="confirm-delete" title="Yes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BOTTOM NAV ==================== -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-screen="screen-home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" data-screen="screen-reader">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span>Read</span>
+    </button>
+    <button class="nav-item" data-screen="screen-bookmarks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span>Saved</span>
+    </button>
+    <button class="nav-item" data-screen="screen-settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+
+  <div class="home-indicator"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
