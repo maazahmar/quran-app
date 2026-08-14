@@ -47,20 +47,8 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
-// ===== TOGGLE TABS (Reader) =====
-document.querySelectorAll('.toggle-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.toggle-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const mode = tab.dataset.mode;
-    document.querySelectorAll('.ayah-translit').forEach(el => {
-      el.style.display = (mode === 'translation') ? 'none' : '';
-    });
-    document.querySelectorAll('.ayah-tafsir').forEach(el => {
-      el.style.display = (mode === 'tafsir') ? '' : 'none';
-    });
-  });
-});
+
+
 
 // ===== BOOKMARK BUTTON =====
 document.querySelectorAll('.bookmark-btn').forEach(btn => {
@@ -69,6 +57,15 @@ document.querySelectorAll('.bookmark-btn').forEach(btn => {
     btn.classList.toggle('bookmarked');
   });
 });
+
+// ===== ABOUT NAVIGATION =====
+document.getElementById('about-us-btn')?.addEventListener('click', () => {
+  showScreen('screen-about');
+});
+document.getElementById('about-back')?.addEventListener('click', () => {
+  showScreen('screen-settings');
+});
+
 
 // ===== TOGGLE SWITCHES (Settings) =====
 document.querySelectorAll('.toggle-switch').forEach(sw => {
