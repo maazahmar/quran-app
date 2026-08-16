@@ -498,7 +498,7 @@ body {
   padding: 20px;
   text-align: center;
 }
-.settings-title { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+.settings-title { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; }
 .settings-group {
   margin: 0 12px 24px;
   padding: 4px 16px;
